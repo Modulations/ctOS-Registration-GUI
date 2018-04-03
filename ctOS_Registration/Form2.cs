@@ -44,6 +44,7 @@ namespace ctOS_Registration {
             string name = sterilizeTextBoxText(nameBox);
             string placeOfBirth = sterilizeTextBoxText(birthBox);
             string age = sterilizeTextBoxText(ageBox);
+            string dateOfBirth = sterilizeTextBoxText(dobBox);
             string occupation = sterilizeTextBoxText(occBox);
             string race = sterilizeTextBoxText(raceBox);
             string affiliations = sterilizeTextBoxText(affBox);
@@ -56,6 +57,7 @@ namespace ctOS_Registration {
                 new JProperty("Name", name),
                 new JProperty("Gender", gender),
                 new JProperty("Place Of Birth", placeOfBirth),
+                new JProperty("Date Of Birth", dateOfBirth),
                 new JProperty("Age", age),
                 new JProperty("Occupation", occupation),
                 new JProperty("Race", race),
