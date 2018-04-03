@@ -6,10 +6,8 @@ using Newtonsoft.Json.Linq;
 using System.IO;
 
 namespace ctOS_Registration {
-    public partial class Form2 : Form
-    {
-        public Form2()
-        {
+    public partial class Form2 : Form {
+        public Form2() {
             InitializeComponent();
             var timer = new Timer();
             //change the background image every second  
@@ -17,8 +15,7 @@ namespace ctOS_Registration {
             timer.Tick += new EventHandler(timer_Tick);
             timer.Start();
         }
-        void timer_Tick(object sender, EventArgs e)
-        {
+        void timer_Tick(object sender, EventArgs e) {
             //add image in list from resource file.  
             List<Bitmap> lisimage = new List<Bitmap>();
             lisimage.Add(Properties.Resources.ctOS_Background);
@@ -28,6 +25,8 @@ namespace ctOS_Registration {
         }
 
         private void button1_Click(object sender, EventArgs e) {
+            bool fileError = false;
+
             string sterilizeTextBoxText(TextBox boxText)
             {
                 string text = boxText.ToString();
@@ -52,7 +51,8 @@ namespace ctOS_Registration {
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } finally {}
+                fileError = true;
+            } finally { }
 
             string name = sterilizeTextBoxText(nameBox);
             string placeOfBirth = sterilizeTextBoxText(birthBox);
@@ -64,8 +64,6 @@ namespace ctOS_Registration {
             string aliases = sterilizeTextBoxText(aliBox);
             string specs = sterilizeTextBoxText(specBox);
             string gender = genderBox.SelectedItem.ToString();
-
-            MessageBox.Show(gender, "GenderBoxOut", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             JObject profile = new JObject(
                 new JProperty("Name", name),
@@ -99,9 +97,18 @@ namespace ctOS_Registration {
 
             try {
                 File.WriteAllText(filename, profileString); // File.WriteAllText(filename, HashedSHA256(profileString)) for Hashed or File.WriteAllText(filename, profileString)
-            } catch(Exception ex) {
+            } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }finally {}
+                fileError = true;
+            } finally { }
+
+            try {
+                if (!fileError) {
+                    System.Diagnostics.Process.Start(@"c:\Windows\notepad.exe", filename);
+                }
+            } catch (Exception ex) {
+                MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
