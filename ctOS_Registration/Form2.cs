@@ -1,17 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using System.IO;
 
-namespace ctOS_Registration
-{
+namespace ctOS_Registration {
     public partial class Form2 : Form
     {
         public Form2()
@@ -69,9 +63,13 @@ namespace ctOS_Registration
             string salary = sterilizeTextBoxText(salBox);
             string aliases = sterilizeTextBoxText(aliBox);
             string specs = sterilizeTextBoxText(specBox);
+            string gender = genderBox.SelectedItem.ToString();
+
+            MessageBox.Show(gender, "GenderBoxOut", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             JObject profile = new JObject(
                 new JProperty("Name", name),
+                new JProperty("Gender", gender),
                 new JProperty("Place Of Birth", placeOfBirth),
                 new JProperty("Age", age),
                 new JProperty("Occupation", occupation),
@@ -81,9 +79,27 @@ namespace ctOS_Registration
                 new JProperty("Aliases", aliases),
                 new JProperty("Specializations", specs));
 
+            string profileString = profile.ToString();
+
+            /*string HashedSHA256(string text) {
+                try {
+                    byte[] bytes = Encoding.UTF8.GetBytes(text);
+                    SHA256Managed hashstring = new SHA256Managed();
+                    byte[] hash = hashstring.ComputeHash(bytes);
+                    string hashString = string.Empty;
+                    foreach (byte x in hash) {
+                        hashString += String.Format("{0:x2}", x);
+                    }
+                    return hashString;
+                }catch (Exception ex) {
+                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return "";
+                }finally {}
+            }*/
+
             try {
-                File.WriteAllText(filename, profile.ToString());
-            }catch(Exception ex) {
+                File.WriteAllText(filename, profileString); // File.WriteAllText(filename, HashedSHA256(profileString)) for Hashed or File.WriteAllText(filename, profileString)
+            } catch(Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }finally {}
         }

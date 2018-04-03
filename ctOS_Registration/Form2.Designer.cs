@@ -48,7 +48,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.specBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.genderBox = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -215,17 +215,17 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Known Specializations:";
             // 
-            // comboBox1
+            // genderBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.genderBox.FormattingEnabled = true;
+            this.genderBox.Items.AddRange(new object[] {
             "Male",
             "Female",
             "None"});
-            this.comboBox1.Location = new System.Drawing.Point(399, 33);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 21);
-            this.comboBox1.TabIndex = 22;
+            this.genderBox.Location = new System.Drawing.Point(399, 33);
+            this.genderBox.Name = "genderBox";
+            this.genderBox.Size = new System.Drawing.Size(144, 21);
+            this.genderBox.TabIndex = 22;
             // 
             // button1
             // 
@@ -243,7 +243,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(856, 409);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.genderBox);
             this.Controls.Add(this.specBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.aliBox);
@@ -293,7 +293,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox specBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox genderBox;
         private System.Windows.Forms.Button button1;
     }
 }
