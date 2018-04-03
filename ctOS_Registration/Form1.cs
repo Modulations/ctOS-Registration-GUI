@@ -16,5 +16,26 @@ namespace ctOS_Registration
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("User error detected. Continuing survey.");
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.ShowDialog();
+        }
     }
 }
