@@ -104,6 +104,10 @@ namespace ctOS_Registration {
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }finally {
+                if(!fileError) {
+                    Environment.Exit(0);
+                }
             }
         }
     }
