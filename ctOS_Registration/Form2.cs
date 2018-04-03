@@ -23,7 +23,17 @@ namespace ctOS_Registration {
             string safeFileName(TextBox boxText)
             {
                 Name = sterilizeTextBoxText(boxText);
-                return Name.Replace(" ", "_");
+                return Name
+                    .Replace("\\", "")
+                    .Replace("/", "")
+                    .Replace("\"", "")
+                    .Replace("*", "")
+                    .Replace(":", "")
+                    .Replace("?", "")
+                    .Replace("<", "")
+                    .Replace(">", "")
+                    .Replace("|", "")
+                    .Replace(" ", "_");
             }
 
             string profilesDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Profiles";
