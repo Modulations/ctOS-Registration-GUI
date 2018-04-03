@@ -97,5 +97,10 @@
   <ItemGroup>
     <None Include="Resources\blume_logo_by_fast_cursor-d7yvtt0.png" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>11.0.2</Version>
+    </PackageReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
