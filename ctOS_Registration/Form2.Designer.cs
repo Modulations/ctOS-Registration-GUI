@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.nameBox = new System.Windows.Forms.TextBox();
             this.nameLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.ageBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.birthBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.occBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.raceBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.affBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.salBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.aliBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.specBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.genderBox = new System.Windows.Forms.ComboBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // nameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(182, 20);
-            this.textBox1.TabIndex = 3;
+            this.nameBox.Location = new System.Drawing.Point(79, 8);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(182, 20);
+            this.nameBox.TabIndex = 3;
             // 
             // nameLabel
             // 
@@ -72,12 +72,12 @@
             this.nameLabel.TabIndex = 2;
             this.nameLabel.Text = "Name:";
             // 
-            // textBox2
+            // ageBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(79, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(182, 20);
-            this.textBox2.TabIndex = 5;
+            this.ageBox.Location = new System.Drawing.Point(79, 34);
+            this.ageBox.Name = "ageBox";
+            this.ageBox.Size = new System.Drawing.Size(182, 20);
+            this.ageBox.TabIndex = 5;
             // 
             // label1
             // 
@@ -103,12 +103,12 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Gender:";
             // 
-            // textBox4
+            // birthBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(479, 33);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(182, 20);
-            this.textBox4.TabIndex = 9;
+            this.birthBox.Location = new System.Drawing.Point(479, 33);
+            this.birthBox.Name = "birthBox";
+            this.birthBox.Size = new System.Drawing.Size(182, 20);
+            this.birthBox.TabIndex = 9;
             // 
             // label3
             // 
@@ -122,12 +122,12 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Place of Birth:";
             // 
-            // textBox5
+            // occBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(439, 85);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(182, 20);
-            this.textBox5.TabIndex = 11;
+            this.occBox.Location = new System.Drawing.Point(439, 85);
+            this.occBox.Name = "occBox";
+            this.occBox.Size = new System.Drawing.Size(182, 20);
+            this.occBox.TabIndex = 11;
             // 
             // label4
             // 
@@ -141,12 +141,12 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Occupation:";
             // 
-            // textBox6
+            // raceBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(379, 110);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(182, 20);
-            this.textBox6.TabIndex = 13;
+            this.raceBox.Location = new System.Drawing.Point(379, 110);
+            this.raceBox.Name = "raceBox";
+            this.raceBox.Size = new System.Drawing.Size(182, 20);
+            this.raceBox.TabIndex = 13;
             // 
             // label5
             // 
@@ -160,12 +160,12 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Race:";
             // 
-            // textBox7
+            // affBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(459, 136);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(182, 20);
-            this.textBox7.TabIndex = 15;
+            this.affBox.Location = new System.Drawing.Point(459, 136);
+            this.affBox.Name = "affBox";
+            this.affBox.Size = new System.Drawing.Size(182, 20);
+            this.affBox.TabIndex = 15;
             // 
             // label6
             // 
@@ -179,12 +179,12 @@
             this.label6.TabIndex = 14;
             this.label6.Text = "Affiliations:";
             // 
-            // textBox8
+            // salBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(399, 158);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(182, 20);
-            this.textBox8.TabIndex = 17;
+            this.salBox.Location = new System.Drawing.Point(399, 158);
+            this.salBox.Name = "salBox";
+            this.salBox.Size = new System.Drawing.Size(182, 20);
+            this.salBox.TabIndex = 17;
             // 
             // label7
             // 
@@ -198,12 +198,12 @@
             this.label7.TabIndex = 16;
             this.label7.Text = "Salary:";
             // 
-            // textBox9
+            // aliBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(469, 358);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(182, 20);
-            this.textBox9.TabIndex = 19;
+            this.aliBox.Location = new System.Drawing.Point(469, 358);
+            this.aliBox.Name = "aliBox";
+            this.aliBox.Size = new System.Drawing.Size(182, 20);
+            this.aliBox.TabIndex = 19;
             // 
             // label8
             // 
@@ -217,12 +217,12 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "Known Aliases:";
             // 
-            // textBox10
+            // specBox
             // 
-            this.textBox10.Location = new System.Drawing.Point(549, 381);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(182, 20);
-            this.textBox10.TabIndex = 21;
+            this.specBox.Location = new System.Drawing.Point(549, 381);
+            this.specBox.Name = "specBox";
+            this.specBox.Size = new System.Drawing.Size(182, 20);
+            this.specBox.TabIndex = 21;
             // 
             // label9
             // 
@@ -236,17 +236,17 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Known Specializations:";
             // 
-            // comboBox1
+            // genderBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.genderBox.FormattingEnabled = true;
+            this.genderBox.Items.AddRange(new object[] {
             "Male",
             "Female",
             "None"});
-            this.comboBox1.Location = new System.Drawing.Point(399, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(144, 21);
-            this.comboBox1.TabIndex = 22;
+            this.genderBox.Location = new System.Drawing.Point(399, 58);
+            this.genderBox.Name = "genderBox";
+            this.genderBox.Size = new System.Drawing.Size(144, 21);
+            this.genderBox.TabIndex = 22;
             // 
             // textBox3
             // 
@@ -276,25 +276,25 @@
             this.ClientSize = new System.Drawing.Size(856, 409);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.genderBox);
+            this.Controls.Add(this.specBox);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.aliBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.salBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.affBox);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.raceBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.occBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.birthBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.ageBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.nameBox);
             this.Controls.Add(this.nameLabel);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
@@ -308,26 +308,26 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox ageBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox birthBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox occBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox raceBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox affBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox salBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox aliBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox specBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox genderBox;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label10;
     }
