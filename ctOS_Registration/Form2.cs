@@ -15,6 +15,20 @@ namespace ctOS_Registration
         public Form2()
         {
             InitializeComponent();
+            var timer = new Timer();
+            //change the background image every second  
+            timer.Interval = 1000;
+            timer.Tick += new EventHandler(timer_Tick);
+            timer.Start();
+        }
+        void timer_Tick(object sender, EventArgs e)
+        {
+            //add image in list from resource file.  
+            List<Bitmap> lisimage = new List<Bitmap>();
+            lisimage.Add(Properties.Resources.ctOS_Background);
+            lisimage.Add(Properties.Resources.ctOS_Background);
+            var indexbackimage = DateTime.Now.Second % lisimage.Count;
+            this.BackgroundImage = lisimage[indexbackimage];
         }
     }
 }

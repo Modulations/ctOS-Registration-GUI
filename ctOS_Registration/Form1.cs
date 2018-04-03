@@ -28,6 +28,7 @@ namespace ctOS_Registration
             this.Hide();
             Form2 f2 = new Form2();
             f2.ShowDialog();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,6 +37,7 @@ namespace ctOS_Registration
             this.Hide();
             Form2 f2 = new Form2();
             f2.ShowDialog();
+            this.Close();
         }
     }
 }
