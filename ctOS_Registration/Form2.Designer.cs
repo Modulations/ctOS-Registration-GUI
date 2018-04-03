@@ -49,7 +49,7 @@
             this.specBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.genderBox = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dobBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -242,19 +242,18 @@
             this.genderBox.FormattingEnabled = true;
             this.genderBox.Items.AddRange(new object[] {
             "Male",
-            "Female",
-            "None"});
+            "Female"});
             this.genderBox.Location = new System.Drawing.Point(399, 58);
             this.genderBox.Name = "genderBox";
             this.genderBox.Size = new System.Drawing.Size(144, 21);
             this.genderBox.TabIndex = 22;
             // 
-            // textBox3
+            // dobBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(469, 7);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 20);
-            this.textBox3.TabIndex = 24;
+            this.dobBox.Location = new System.Drawing.Point(469, 7);
+            this.dobBox.Name = "dobBox";
+            this.dobBox.Size = new System.Drawing.Size(182, 20);
+            this.dobBox.TabIndex = 24;
             // 
             // label10
             // 
@@ -285,7 +284,7 @@
             this.BackgroundImage = global::ctOS_Registration.Properties.Resources.ctOS_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(856, 409);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.dobBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.genderBox);
@@ -340,7 +339,7 @@
         private System.Windows.Forms.TextBox specBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox genderBox;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox dobBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
     }

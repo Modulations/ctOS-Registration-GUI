@@ -44,18 +44,27 @@ namespace ctOS_Registration {
             string name = sterilizeTextBoxText(nameBox);
             string placeOfBirth = sterilizeTextBoxText(birthBox);
             string age = sterilizeTextBoxText(ageBox);
+            string dateOfBirth = sterilizeTextBoxText(dobBox);
             string occupation = sterilizeTextBoxText(occBox);
             string race = sterilizeTextBoxText(raceBox);
             string affiliations = sterilizeTextBoxText(affBox);
             string salary = sterilizeTextBoxText(salBox);
             string aliases = sterilizeTextBoxText(aliBox);
             string specs = sterilizeTextBoxText(specBox);
-            string gender = genderBox.SelectedItem.ToString();
+            string gender;
+            try {
+                gender = genderBox.SelectedItem.ToString();
+            } catch (Exception ex) {
+                MessageBox.Show("Please Select a Valid Option.", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                gender = "Error";
+                fileError = true;
+            }
 
             JObject profile = new JObject(
                 new JProperty("Name", name),
                 new JProperty("Gender", gender),
                 new JProperty("Place Of Birth", placeOfBirth),
+                new JProperty("Date Of Birth", dateOfBirth),
                 new JProperty("Age", age),
                 new JProperty("Occupation", occupation),
                 new JProperty("Race", race),
@@ -65,7 +74,7 @@ namespace ctOS_Registration {
                 new JProperty("Specializations", specs));
 
             string profileString = profile.ToString();
-
+            
             /*string HashedSHA256(string text) {
                 try {
                     byte[] bytes = Encoding.UTF8.GetBytes(text);
@@ -83,7 +92,7 @@ namespace ctOS_Registration {
             }*/
 
             try {
-                File.WriteAllText(filename, profileString); // File.WriteAllText(filename, HashedSHA256(profileString)) for Hashed or File.WriteAllText(filename, profileString)
+                if(!fileError) File.WriteAllText(filename, profileString); // File.WriteAllText(filename, HashedSHA256(profileString)) for Hashed or File.WriteAllText(filename, profileString)
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 fileError = true;
