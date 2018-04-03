@@ -89,9 +89,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bg.bmp" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\ctOS_Background.png" />
   </ItemGroup>
   <ItemGroup>
