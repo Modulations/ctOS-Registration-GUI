@@ -51,7 +51,14 @@ namespace ctOS_Registration {
             string salary = sterilizeTextBoxText(salBox);
             string aliases = sterilizeTextBoxText(aliBox);
             string specs = sterilizeTextBoxText(specBox);
-            string gender = genderBox.SelectedItem.ToString();
+            string gender;
+            try {
+                gender = genderBox.SelectedItem.ToString();
+            } catch (Exception ex) {
+                MessageBox.Show("Please Select a Valid Option.", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                gender = "Error";
+                fileError = true;
+            }
 
             JObject profile = new JObject(
                 new JProperty("Name", name),
@@ -67,7 +74,7 @@ namespace ctOS_Registration {
                 new JProperty("Specializations", specs));
 
             string profileString = profile.ToString();
-
+            
             /*string HashedSHA256(string text) {
                 try {
                     byte[] bytes = Encoding.UTF8.GetBytes(text);
@@ -85,7 +92,7 @@ namespace ctOS_Registration {
             }*/
 
             try {
-                File.WriteAllText(filename, profileString); // File.WriteAllText(filename, HashedSHA256(profileString)) for Hashed or File.WriteAllText(filename, profileString)
+                if(!fileError) File.WriteAllText(filename, profileString); // File.WriteAllText(filename, HashedSHA256(profileString)) for Hashed or File.WriteAllText(filename, profileString)
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 fileError = true;
@@ -97,6 +104,10 @@ namespace ctOS_Registration {
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }finally {
+                if(!fileError) {
+                    Environment.Exit(0);
+                }
             }
         }
     }
