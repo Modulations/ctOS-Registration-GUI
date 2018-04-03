@@ -37,6 +37,7 @@ namespace ctOS_Registration
             this.Hide();
             Form2 f2 = new Form2();
             f2.ShowDialog();
+            MessageBox.Show("Thank you for cooperating, citizen.");
             this.Close();
         }
     }

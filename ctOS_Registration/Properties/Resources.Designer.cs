@@ -63,9 +63,9 @@ namespace ctOS_Registration.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap blume_logo_by_fast_cursor_d7yvtt0 {
+        internal static System.Drawing.Bitmap blume_logo {
             get {
-                object obj = ResourceManager.GetObject("blume_logo_by_fast_cursor-d7yvtt0", resourceCulture);
+                object obj = ResourceManager.GetObject("blume_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
