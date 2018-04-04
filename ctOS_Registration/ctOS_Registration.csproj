@@ -99,5 +99,11 @@
       <Version>11.0.2</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\512px-Ctos-logo-white.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clean blume logo - Copy.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

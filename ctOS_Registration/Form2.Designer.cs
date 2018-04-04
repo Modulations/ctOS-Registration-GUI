@@ -52,11 +52,17 @@
             this.dobBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ctOS_img = new System.Windows.Forms.PictureBox();
+            this.blumeLogo = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctOS_img)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blumeLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(79, 8);
+            this.nameBox.Location = new System.Drawing.Point(79, 82);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(182, 20);
             this.nameBox.TabIndex = 3;
@@ -67,7 +73,7 @@
             this.nameLabel.BackColor = System.Drawing.Color.Transparent;
             this.nameLabel.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.nameLabel.Location = new System.Drawing.Point(12, 9);
+            this.nameLabel.Location = new System.Drawing.Point(12, 83);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(58, 18);
             this.nameLabel.TabIndex = 2;
@@ -75,7 +81,7 @@
             // 
             // ageBox
             // 
-            this.ageBox.Location = new System.Drawing.Point(79, 34);
+            this.ageBox.Location = new System.Drawing.Point(79, 108);
             this.ageBox.Name = "ageBox";
             this.ageBox.Size = new System.Drawing.Size(182, 20);
             this.ageBox.TabIndex = 5;
@@ -86,7 +92,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Location = new System.Drawing.Point(12, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 18);
             this.label1.TabIndex = 4;
@@ -98,7 +104,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(315, 59);
+            this.label2.Location = new System.Drawing.Point(315, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 18);
             this.label2.TabIndex = 6;
@@ -106,7 +112,7 @@
             // 
             // birthBox
             // 
-            this.birthBox.Location = new System.Drawing.Point(479, 33);
+            this.birthBox.Location = new System.Drawing.Point(479, 107);
             this.birthBox.Name = "birthBox";
             this.birthBox.Size = new System.Drawing.Size(182, 20);
             this.birthBox.TabIndex = 9;
@@ -117,7 +123,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(315, 34);
+            this.label3.Location = new System.Drawing.Point(315, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 18);
             this.label3.TabIndex = 8;
@@ -125,7 +131,7 @@
             // 
             // occBox
             // 
-            this.occBox.Location = new System.Drawing.Point(439, 85);
+            this.occBox.Location = new System.Drawing.Point(439, 159);
             this.occBox.Name = "occBox";
             this.occBox.Size = new System.Drawing.Size(182, 20);
             this.occBox.TabIndex = 11;
@@ -136,7 +142,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(315, 87);
+            this.label4.Location = new System.Drawing.Point(315, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 18);
             this.label4.TabIndex = 10;
@@ -144,7 +150,7 @@
             // 
             // raceBox
             // 
-            this.raceBox.Location = new System.Drawing.Point(379, 110);
+            this.raceBox.Location = new System.Drawing.Point(379, 184);
             this.raceBox.Name = "raceBox";
             this.raceBox.Size = new System.Drawing.Size(182, 20);
             this.raceBox.TabIndex = 13;
@@ -155,7 +161,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(315, 112);
+            this.label5.Location = new System.Drawing.Point(315, 186);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 18);
             this.label5.TabIndex = 12;
@@ -163,7 +169,7 @@
             // 
             // affBox
             // 
-            this.affBox.Location = new System.Drawing.Point(459, 136);
+            this.affBox.Location = new System.Drawing.Point(459, 210);
             this.affBox.Name = "affBox";
             this.affBox.Size = new System.Drawing.Size(182, 20);
             this.affBox.TabIndex = 15;
@@ -174,7 +180,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(315, 136);
+            this.label6.Location = new System.Drawing.Point(315, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 18);
             this.label6.TabIndex = 14;
@@ -182,7 +188,7 @@
             // 
             // salBox
             // 
-            this.salBox.Location = new System.Drawing.Point(399, 158);
+            this.salBox.Location = new System.Drawing.Point(399, 232);
             this.salBox.Name = "salBox";
             this.salBox.Size = new System.Drawing.Size(182, 20);
             this.salBox.TabIndex = 17;
@@ -193,7 +199,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(315, 158);
+            this.label7.Location = new System.Drawing.Point(315, 232);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 18);
             this.label7.TabIndex = 16;
@@ -201,7 +207,7 @@
             // 
             // aliBox
             // 
-            this.aliBox.Location = new System.Drawing.Point(469, 358);
+            this.aliBox.Location = new System.Drawing.Point(469, 432);
             this.aliBox.Name = "aliBox";
             this.aliBox.Size = new System.Drawing.Size(182, 20);
             this.aliBox.TabIndex = 19;
@@ -212,7 +218,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(315, 358);
+            this.label8.Location = new System.Drawing.Point(315, 432);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(148, 18);
             this.label8.TabIndex = 18;
@@ -220,7 +226,7 @@
             // 
             // specBox
             // 
-            this.specBox.Location = new System.Drawing.Point(549, 381);
+            this.specBox.Location = new System.Drawing.Point(549, 455);
             this.specBox.Name = "specBox";
             this.specBox.Size = new System.Drawing.Size(182, 20);
             this.specBox.TabIndex = 21;
@@ -231,7 +237,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(315, 381);
+            this.label9.Location = new System.Drawing.Point(315, 455);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(228, 18);
             this.label9.TabIndex = 20;
@@ -243,14 +249,14 @@
             this.genderBox.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.genderBox.Location = new System.Drawing.Point(399, 58);
+            this.genderBox.Location = new System.Drawing.Point(399, 132);
             this.genderBox.Name = "genderBox";
             this.genderBox.Size = new System.Drawing.Size(144, 21);
             this.genderBox.TabIndex = 22;
             // 
             // dobBox
             // 
-            this.dobBox.Location = new System.Drawing.Point(469, 7);
+            this.dobBox.Location = new System.Drawing.Point(469, 81);
             this.dobBox.Name = "dobBox";
             this.dobBox.Size = new System.Drawing.Size(182, 20);
             this.dobBox.TabIndex = 24;
@@ -261,7 +267,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(315, 9);
+            this.label10.Location = new System.Drawing.Point(315, 83);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(148, 18);
             this.label10.TabIndex = 23;
@@ -269,13 +275,48 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(738, 358);
+            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(15, 430);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 43);
+            this.button1.Size = new System.Drawing.Size(294, 75);
             this.button1.TabIndex = 23;
-            this.button1.Text = "Submit";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "LAUNCH ctOS LIVE TRACKING";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Maroon;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1185, 75);
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
+            // ctOS_img
+            // 
+            this.ctOS_img.BackColor = System.Drawing.Color.DarkRed;
+            this.ctOS_img.BackgroundImage = global::ctOS_Registration.Properties.Resources.ctOS_White;
+            this.ctOS_img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ctOS_img.Location = new System.Drawing.Point(8, 12);
+            this.ctOS_img.Name = "ctOS_img";
+            this.ctOS_img.Size = new System.Drawing.Size(233, 49);
+            this.ctOS_img.TabIndex = 26;
+            this.ctOS_img.TabStop = false;
+            // 
+            // blumeLogo
+            // 
+            this.blumeLogo.BackColor = System.Drawing.Color.DarkRed;
+            this.blumeLogo.BackgroundImage = global::ctOS_Registration.Properties.Resources.White_Blume_Logo;
+            this.blumeLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.blumeLogo.Location = new System.Drawing.Point(1099, 8);
+            this.blumeLogo.Name = "blumeLogo";
+            this.blumeLogo.Size = new System.Drawing.Size(73, 63);
+            this.blumeLogo.TabIndex = 27;
+            this.blumeLogo.TabStop = false;
             // 
             // Form2
             // 
@@ -283,7 +324,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ctOS_Registration.Properties.Resources.ctOS_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(856, 409);
+            this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.blumeLogo);
+            this.Controls.Add(this.ctOS_img);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dobBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.button1);
@@ -313,6 +357,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
             this.Text = "ctOS User Registration Survey";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctOS_img)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blumeLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,5 +390,8 @@
         private System.Windows.Forms.TextBox dobBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox ctOS_img;
+        private System.Windows.Forms.PictureBox blumeLogo;
     }
 }
