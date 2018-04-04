@@ -28,10 +28,9 @@ namespace ctOS_Registration {
             string fullpath = filepath + @"\" + safeFileName(name) + @".json";
 
             if (File.Exists(fullpath)) {
-                MessageBox.Show("Path Exists", "here", MessageBoxButtons.OK, MessageBoxIcon.None);
                 ctOSDatabaseAccess.ctOSDisplay(fullpath);
             }else {
-                MessageBox.Show("Path Doesn't Exist", "here", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Profile was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
