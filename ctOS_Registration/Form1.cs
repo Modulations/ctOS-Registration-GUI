@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ctOS_Registration
 {
-    public partial class Form1 : Form
+    public partial class ctOS_Welcome : Form
     {
-        public Form1()
+        public ctOS_Welcome()
         {
             InitializeComponent();
         }
@@ -33,12 +33,17 @@ namespace ctOS_Registration
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("User error detected. Continuing survey.");
+            MessageBox.Show("User error detected. Continuing survey.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             this.Hide();
             Form2 f2 = new Form2();
             f2.ShowDialog();
-            MessageBox.Show("Thank you for cooperating, citizen.");
+            MessageBox.Show("Thank you for cooperating, citizen.", "Thank you.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
+        }
+
+        private void adminPanelButton_Click(object sender, EventArgs e) {
+            adminLoginPanel login = new adminLoginPanel();
+            login.ShowDialog();
         }
     }
 }
