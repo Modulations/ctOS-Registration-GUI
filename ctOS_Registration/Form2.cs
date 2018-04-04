@@ -54,13 +54,13 @@ namespace ctOS_Registration {
             string name = sterilizeTextBoxText(nameBox);
             string placeOfBirth = sterilizeTextBoxText(birthBox);
             string age = sterilizeTextBoxText(ageBox);
-            string dateOfBirth = sterilizeTextBoxText(dobBox);
+            //string dateOfBirth = sterilizeTextBoxText(dobBox);
             string occupation = sterilizeTextBoxText(occBox);
             string race = sterilizeTextBoxText(raceBox);
             string affiliations = sterilizeTextBoxText(affBox);
             string salary = sterilizeTextBoxText(salBox);
-            string aliases = sterilizeTextBoxText(aliBox);
-            string specs = sterilizeTextBoxText(specBox);
+            //string aliases = sterilizeTextBoxText(aliBox);
+            //string specs = sterilizeTextBoxText(specBox);
             string gender;
             try {
                 gender = genderBox.SelectedItem.ToString();
@@ -74,14 +74,14 @@ namespace ctOS_Registration {
                 new JProperty("Name", name),
                 new JProperty("Gender", gender),
                 new JProperty("Place Of Birth", placeOfBirth),
-                new JProperty("Date Of Birth", dateOfBirth),
+                //new JProperty("Date Of Birth", dateOfBirth),
                 new JProperty("Age", age),
                 new JProperty("Occupation", occupation),
                 new JProperty("Race", race),
                 new JProperty("Affiliations", affiliations),
-                new JProperty("Salary", salary),
-                new JProperty("Aliases", aliases),
-                new JProperty("Specializations", specs));
+                new JProperty("Salary", salary));//,
+                //new JProperty("Aliases", aliases),
+                //new JProperty("Specializations", specs));
 
             string profileString = profile.ToString();
             
@@ -116,6 +116,7 @@ namespace ctOS_Registration {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }finally {
                 if(!fileError) {
+                    MessageBox.Show("Thank you for cooperating, citizen.", "Thank you.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Environment.Exit(0);
                 }
             }
