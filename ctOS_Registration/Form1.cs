@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ctOS_Registration
-{
+namespace ctOS_Registration {
     public partial class ctOS_Welcome : Form
     {
         public ctOS_Welcome()
@@ -25,20 +17,20 @@ namespace ctOS_Registration
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Hide();
             Form2 f2 = new Form2();
             f2.ShowDialog();
-            this.Close();
+            Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("User error detected. Continuing survey.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            this.Hide();
+            Hide();
             Form2 f2 = new Form2();
             f2.ShowDialog();
             MessageBox.Show("Thank you for cooperating, citizen.", "Thank you.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            Close();
         }
 
         private void adminPanelButton_Click(object sender, EventArgs e) {
