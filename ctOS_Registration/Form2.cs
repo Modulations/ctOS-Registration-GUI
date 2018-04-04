@@ -111,7 +111,13 @@ namespace ctOS_Registration {
 
             try {
                 if (!fileError) {
-                    System.Diagnostics.Process.Start(@"c:\Windows\notepad.exe", filename);
+                    int p = (int) Environment.OSVersion.Platform;
+                    if((p == 4) || (p == 6) || (p == 128)) { // Running on Unix
+                        System.Diagnostics.Process.Start("xdg-open", filename)
+                    } else { // Running on not Unix
+                        System.Diagnostics.Process.Start(@"c:\Windows\notepad.exe", filename);
+                    }
+                }
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
