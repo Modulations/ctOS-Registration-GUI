@@ -65,6 +65,7 @@ namespace ctOS_Registration {
             try {
                 gender = genderBox.SelectedItem.ToString();
             } catch (Exception ex) {
+                string exc = ex.ToString();
                 MessageBox.Show("Please Select a Valid Option.", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 gender = "Error";
                 fileError = true;
