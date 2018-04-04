@@ -54,8 +54,10 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(13, 39);
             this.textBox1.Name = "textBox1";
+            this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(347, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -69,11 +71,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 13);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(66, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(198, 13);
+            this.label2.Size = new System.Drawing.Size(256, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Please input you administrator password.";
+            this.label2.Text = "Please input your administrator password.";
             // 
             // adminLoginPanel
             // 

@@ -18,8 +18,12 @@ namespace ctOS_Registration {
                         return keyValuePair.Value.ToString();
                     }
                 }
-                MessageBox.Show("Error, KeyValue pair not found for key: " + key, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return String.Empty;
+                if (key == "Threat Level") {
+                    return "No Threat Level Data Found";
+                }else {
+                    MessageBox.Show("Error, KeyValue pair not found for key: " + key, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return String.Empty;
+                }
             }
             JObject profile;
             try {
@@ -40,7 +44,10 @@ namespace ctOS_Registration {
                 string salary = GetJObjectValue(profile, "Salary");
                 string threatLevel = GetJObjectValue(profile, "Threat Level");
 
-                MessageBox.Show(name + "\n" + gender + "\n" + age + "\n" + occupation + "\n" + race + "\n" + affiliations + "\n" + salary + "\n" + threatLevel, "Profile Of " + name, MessageBoxButtons.OK, MessageBoxIcon.None);
+                string[] info = { name, gender, age, occupation, race, affiliations, salary, threatLevel }; // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = threat level
+
+                Form5 f5 = new Form5();
+                f5.SetBoxes(info);
             }
         }
 
