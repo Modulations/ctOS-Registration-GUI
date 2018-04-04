@@ -17,7 +17,7 @@ namespace ctOS_Registration {
         }
 
         private void LoginCancel_Click(object sender, EventArgs e) {
-            this.Close();
+            Close();
         }
 
         private void LoginConfirm_Click(object sender, EventArgs e) {
@@ -40,7 +40,11 @@ namespace ctOS_Registration {
             }
 
             if(textBox1.Text.ToString() == GetJObjectValue(password, "AdminPassword")) {
-                MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Password \"" + GetJObjectValue(password, "AdminPassword") + "\" is correct.", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.None);
+                Form4 f4 = new Form4();
+                Hide();
+                f4.ShowDialog();
+                Close();
             }
         }
     }

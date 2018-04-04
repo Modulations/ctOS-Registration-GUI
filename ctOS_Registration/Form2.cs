@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using System.IO;
@@ -13,7 +11,11 @@ namespace ctOS_Registration {
 
         private void button1_Click(object sender, EventArgs e) {
             bool fileError = false;
-
+            double GetRandomNumber(double minimum, double maximum)
+            {
+                Random random = new Random();
+                return random.NextDouble() * (maximum - minimum) + minimum;
+            }
             string sterilizeTextBoxText(TextBox boxText)
             {
                 string text = boxText.ToString();
@@ -59,11 +61,18 @@ namespace ctOS_Registration {
             string race = sterilizeTextBoxText(raceBox);
             string affiliations = sterilizeTextBoxText(affBox);
             string salary = sterilizeTextBoxText(salBox);
+            double threatLevel = GetRandomNumber(0.00, 100.00);
             //string aliases = sterilizeTextBoxText(aliBox);
             //string specs = sterilizeTextBoxText(specBox);
             string gender;
             try {
-                gender = genderBox.SelectedItem.ToString();
+                if (genderBox.SelectedItem.ToString() == String.Empty) {
+                    MessageBox.Show("Please Select a Valid Option.", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    gender = "Error";
+                    fileError = true;
+                }else {
+                    gender = genderBox.SelectedItem.ToString();
+                }
             } catch (Exception ex) {
                 MessageBox.Show("Please Select a Valid Option.", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 gender = "Error";
@@ -79,7 +88,8 @@ namespace ctOS_Registration {
                 new JProperty("Occupation", occupation),
                 new JProperty("Race", race),
                 new JProperty("Affiliations", affiliations),
-                new JProperty("Salary", salary));//,
+                new JProperty("Salary", salary),
+                new JProperty("Threat Level", threatLevel.ToString()));
                 //new JProperty("Aliases", aliases),
                 //new JProperty("Specializations", specs));
 

@@ -43,7 +43,9 @@ namespace ctOS_Registration
 
         private void adminPanelButton_Click(object sender, EventArgs e) {
             adminLoginPanel login = new adminLoginPanel();
+            Hide();
             login.ShowDialog();
+            Close();
         }
     }
 }
