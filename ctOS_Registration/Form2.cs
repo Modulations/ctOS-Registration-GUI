@@ -9,9 +9,19 @@ namespace ctOS_Registration {
             InitializeComponent();
         }
 
+        public void ctOS_Registration() {
+            Text = "ctOS User Registration";
+            label8.Hide();
+            threatBox.Hide();
+            pictureBox2.Hide();
+            ShowDialog();
+        }
+
         public void SetBoxes(string[] profile)
         {
             // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = place of birth, 8 = threat level
+
+            Text = "Profile of User: " + profile[0];
 
             nameBox.AppendText(profile[0]);
             genderBox.Text = profile[1];
@@ -21,6 +31,7 @@ namespace ctOS_Registration {
             affBox.AppendText(profile[5]);
             salBox.AppendText(profile[6]);
             birthBox.AppendText(profile[7]);
+            threatBox.Enabled = true;
             threatBox.AppendText(profile[8]);
 
             nameBox.Enabled = false;
@@ -156,7 +167,7 @@ namespace ctOS_Registration {
             }finally {
                 if(!fileError) {
                     MessageBox.Show("Thank you for cooperating, citizen.", "Thank you.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Environment.Exit(0);
+                    Close();
                 }
             }
         }

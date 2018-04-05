@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json.Linq;
@@ -21,25 +15,36 @@ namespace ctOS_Registration {
         }
 
         private void LoginConfirm_Click(object sender, EventArgs e) {
-            const string filename = @"adminpass.json";
+            bool error = false;
+
+            string passDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Profiles\Password";
+            string filename = passDir + @"\password.json";
             if (!File.Exists(filename)) {
                 JObject p = new JObject(
                     new JProperty("AdminPassword", "password"));
-                File.WriteAllText(filename, p.ToString());
+                try {
+                    File.WriteAllText(filename, p.ToString());
+                }catch(Exception ex) {
+                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    error = true;
+                }
             }
-            JObject password = JObject.Parse(File.ReadAllText(filename));
+            JObject password;
+            if (!error) {
+                password = JObject.Parse(File.ReadAllText(filename));
+            } else password = new JObject();
 
             string GetJObjectValue(JObject array, string key) {
-                foreach(KeyValuePair<string, JToken> keyValuePair in array) {
+                foreach (KeyValuePair<string, JToken> keyValuePair in array) {
                     if (key == keyValuePair.Key) {
                         return keyValuePair.Value.ToString();
                     }
                 }
-                MessageBox.Show("Error, KeyValue pair not found for key: " + key, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (!error) MessageBox.Show("Error, KeyValue pair not found for key: " + key, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return String.Empty;
             }
 
-            if(textBox1.Text.ToString() == GetJObjectValue(password, "AdminPassword")) {
+            if(textBox1.Text.ToString() == GetJObjectValue(password, "AdminPassword") && !error) {
                 MessageBox.Show("Password \"" + GetJObjectValue(password, "AdminPassword") + "\" is correct.", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.None);
                 Form4 f4 = new Form4();
                 Hide();

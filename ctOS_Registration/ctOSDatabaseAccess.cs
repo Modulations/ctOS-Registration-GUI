@@ -44,6 +44,7 @@ namespace ctOS_Registration {
 
                 int index = threatLevel.IndexOf('.');
                 threatLevel = threatLevel.Substring(0, index);
+                threatLevel = threatLevel + @"%";
 
                 string[] info = { name, gender, age, occupation, race, affiliations, salary, pob, threatLevel }; // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = place of birth, 8 = threat level
 

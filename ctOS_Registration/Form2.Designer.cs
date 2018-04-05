@@ -289,6 +289,7 @@
             // 
             this.threatBox.BackColor = System.Drawing.Color.DarkRed;
             this.threatBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.threatBox.Enabled = false;
             this.threatBox.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.threatBox.ForeColor = System.Drawing.Color.White;
             this.threatBox.Location = new System.Drawing.Point(712, 90);
