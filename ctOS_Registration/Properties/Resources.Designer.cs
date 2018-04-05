@@ -63,9 +63,29 @@ namespace ctOS_Registration.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Blume {
+            get {
+                object obj = ResourceManager.GetObject("Blume", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blume_logo {
             get {
                 object obj = ResourceManager.GetObject("blume_logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ctOS {
+            get {
+                object obj = ResourceManager.GetObject("ctOS", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

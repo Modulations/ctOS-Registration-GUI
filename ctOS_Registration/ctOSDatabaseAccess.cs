@@ -39,12 +39,13 @@ namespace ctOS_Registration {
                 string race = GetJObjectValue(profile, "Race");
                 string affiliations = GetJObjectValue(profile, "Affiliations");
                 string salary = GetJObjectValue(profile, "Salary");
+                string pob = GetJObjectValue(profile, "Place Of Birth");
                 string threatLevel = GetJObjectValue(profile, "Threat Level");
 
-                string[] info = { name, gender, age, occupation, race, affiliations, salary, threatLevel }; // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = threat level
+                string[] info = { name, gender, age, occupation, race, affiliations, salary, pob, threatLevel }; // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = place of birth, 8 = threat level
 
-                Form5 f5 = new Form5();
-                f5.SetBoxes(info);
+                Form2 f2 = new Form2();
+                f2.SetBoxes(info);
             }
         }
 

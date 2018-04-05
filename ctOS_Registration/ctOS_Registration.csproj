@@ -133,5 +133,11 @@
   <ItemGroup>
     <None Include="Resources\clean blume logo - Copy.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ctOS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blume.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

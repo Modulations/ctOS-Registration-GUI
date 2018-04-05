@@ -9,6 +9,35 @@ namespace ctOS_Registration {
             InitializeComponent();
         }
 
+        public void SetBoxes(string[] profile)
+        {
+            // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = place of birth, 8 = threat level
+
+            nameBox.AppendText(profile[0]);
+            genderBox.Text = profile[1];
+            ageBox.AppendText(profile[2]);
+            occBox.AppendText(profile[3]);
+            raceBox.AppendText(profile[4]);
+            affBox.AppendText(profile[5]);
+            salBox.AppendText(profile[6]);
+            birthBox.AppendText(profile[7]);
+            threatBox.AppendText(profile[8]);
+
+            nameBox.Enabled = false;
+            genderBox.Enabled = false;
+            ageBox.Enabled = false;
+            occBox.Enabled = false;
+            raceBox.Enabled = false;
+            affBox.Enabled = false;
+            salBox.Enabled = false;
+            birthBox.Enabled = false;
+            threatBox.Enabled = false;
+
+            button1.Enabled = false;
+
+            ShowDialog();
+        }
+
         private void button1_Click(object sender, EventArgs e) {
             bool fileError = false;
             double GetRandomNumber(double minimum, double maximum)

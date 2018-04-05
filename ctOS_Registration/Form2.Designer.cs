@@ -49,9 +49,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ctOS_img = new System.Windows.Forms.PictureBox();
             this.blumeLogo = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.threatBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctOS_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blumeLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // nameBox
@@ -240,24 +244,59 @@
             // ctOS_img
             // 
             this.ctOS_img.BackColor = System.Drawing.Color.DarkRed;
-            this.ctOS_img.BackgroundImage = global::ctOS_Registration.Properties.Resources.ctOS_White;
+            this.ctOS_img.BackgroundImage = global::ctOS_Registration.Properties.Resources.ctOS;
             this.ctOS_img.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ctOS_img.Location = new System.Drawing.Point(8, 12);
+            this.ctOS_img.Location = new System.Drawing.Point(12, 8);
             this.ctOS_img.Name = "ctOS_img";
-            this.ctOS_img.Size = new System.Drawing.Size(233, 49);
+            this.ctOS_img.Size = new System.Drawing.Size(98, 59);
             this.ctOS_img.TabIndex = 26;
             this.ctOS_img.TabStop = false;
             // 
             // blumeLogo
             // 
             this.blumeLogo.BackColor = System.Drawing.Color.DarkRed;
-            this.blumeLogo.BackgroundImage = global::ctOS_Registration.Properties.Resources.White_Blume_Logo;
+            this.blumeLogo.BackgroundImage = global::ctOS_Registration.Properties.Resources.Blume;
             this.blumeLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.blumeLogo.Location = new System.Drawing.Point(1099, 8);
+            this.blumeLogo.Location = new System.Drawing.Point(1120, 8);
             this.blumeLogo.Name = "blumeLogo";
-            this.blumeLogo.Size = new System.Drawing.Size(73, 63);
+            this.blumeLogo.Size = new System.Drawing.Size(52, 63);
             this.blumeLogo.TabIndex = 27;
             this.blumeLogo.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.DarkRed;
+            this.pictureBox2.Location = new System.Drawing.Point(548, 85);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(253, 41);
+            this.pictureBox2.TabIndex = 28;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.DarkRed;
+            this.label8.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label8.Location = new System.Drawing.Point(587, 86);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 36);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "     THREAT\r\nPROBABILITY";
+            // 
+            // threatBox
+            // 
+            this.threatBox.BackColor = System.Drawing.Color.DarkRed;
+            this.threatBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.threatBox.Font = new System.Drawing.Font("Courier New", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.threatBox.ForeColor = System.Drawing.Color.White;
+            this.threatBox.Location = new System.Drawing.Point(712, 90);
+            this.threatBox.Multiline = true;
+            this.threatBox.Name = "threatBox";
+            this.threatBox.Size = new System.Drawing.Size(79, 31);
+            this.threatBox.TabIndex = 30;
+            this.threatBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form2
             // 
@@ -266,6 +305,9 @@
             this.BackgroundImage = global::ctOS_Registration.Properties.Resources.ctOS_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.threatBox);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.blumeLogo);
             this.Controls.Add(this.ctOS_img);
             this.Controls.Add(this.pictureBox1);
@@ -295,6 +337,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctOS_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blumeLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,5 +365,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox ctOS_img;
         private System.Windows.Forms.PictureBox blumeLogo;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox threatBox;
     }
 }
