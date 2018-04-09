@@ -16,7 +16,7 @@ namespace ctOS_Registration
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ctOS_Welcome());
+            Application.Run(new Form1());
         }
     }
 }
