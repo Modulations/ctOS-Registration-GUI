@@ -7,6 +7,20 @@ using System.IO;
 namespace ctOS_Registration {
     class ctOSDatabaseAccess {
         public static void ctOSDisplay(string filepath) {
+            string safeFileName(string s) {
+                return s
+                    .Replace("\\", "")
+                    .Replace("/", "")
+                    .Replace("\"", "")
+                    .Replace("*", "")
+                    .Replace(":", "")
+                    .Replace("?", "")
+                    .Replace("<", "")
+                    .Replace(">", "")
+                    .Replace("|", "")
+                    .Replace(" ", "_");
+            }
+
             bool error = false;
             string GetJObjectValue(JObject array, string key)
             {
@@ -45,8 +59,11 @@ namespace ctOS_Registration {
                 int index = threatLevel.IndexOf('.');
                 threatLevel = threatLevel.Substring(0, index);
                 threatLevel = threatLevel + @"%";
+                
+                index = filepath.LastIndexOf(@"\");
+                string imageLoc = filepath.Substring(0, index + 1) + @"Pictures\" + safeFileName(name) + ".png";
 
-                string[] info = { name, gender, age, occupation, race, affiliations, salary, pob, threatLevel }; // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = place of birth, 8 = threat level
+                string[] info = { name, gender, age, occupation, race, affiliations, salary, pob, threatLevel, imageLoc }; // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = place of birth, 8 = threat level, 9 = Image Location
 
                 Form2 f2 = new Form2();
                 f2.SetBoxes(info);

@@ -45,7 +45,7 @@ namespace ctOS_Registration {
             }
 
             if(textBox1.Text.ToString() == GetJObjectValue(password, "AdminPassword") && !error) {
-                MessageBox.Show("Password \"" + GetJObjectValue(password, "AdminPassword") + "\" is correct.", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.None);
+                MessageBox.Show("Access Granted", "Access Granted", MessageBoxButtons.OK, MessageBoxIcon.None);
                 Form4 f4 = new Form4();
                 Hide();
                 f4.ShowDialog();

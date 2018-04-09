@@ -113,7 +113,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox passBox;
         private System.Windows.Forms.Button ConfirmButton;
-        private System.Windows.Forms.Button CancelButton;
+        private new System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.TextBox passBox2;
         private System.Windows.Forms.Label label2;
     }

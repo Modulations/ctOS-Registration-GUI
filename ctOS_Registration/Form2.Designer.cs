@@ -52,10 +52,12 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.threatBox = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctOS_img)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blumeLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // nameBox
@@ -299,6 +301,15 @@
             this.threatBox.TabIndex = 30;
             this.threatBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Location = new System.Drawing.Point(854, 184);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox3.TabIndex = 31;
+            this.pictureBox3.TabStop = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -306,6 +317,7 @@
             this.BackgroundImage = global::ctOS_Registration.Properties.Resources.ctOS_Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1184, 561);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.threatBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox2);
@@ -339,6 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ctOS_img)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blumeLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,5 +382,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox threatBox;
+        private System.Windows.Forms.PictureBox pictureBox3;
     }
 }
