@@ -20,7 +20,7 @@ namespace ctOS_Registration {
         {
             Hide();
             Form2 f2 = new Form2();
-            f2.ctOS_Registration();
+            f2.ctOS_RegistrationPage();
             Show();
         }
 
@@ -29,7 +29,7 @@ namespace ctOS_Registration {
             MessageBox.Show("User error detected. Continuing survey.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             Hide();
             Form2 f2 = new Form2();
-            f2.ctOS_Registration();
+            f2.ctOS_RegistrationPage();
             Show();
         }
 

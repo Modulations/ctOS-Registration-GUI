@@ -12,41 +12,44 @@ namespace ctOS_Registration {
             InitializeComponent();
         }
 
-        public void ctOS_Registration() {
+        Bitmap ResizeImage(Image imageToChange, int width, int height) {
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(imageToChange.HorizontalResolution, imageToChange.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage)) {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes()) {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(imageToChange, destRect, 0, 0, imageToChange.Width, imageToChange.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
+        }
+
+        public void ctOS_RegistrationPage() {
             Text = "ctOS User Registration";
             label8.Hide();
             threatBox.Hide();
             pictureBox2.Hide();
-            pictureBox3.Hide();
+            Bitmap image = ResizeImage(Properties.Resources.download, 250, 250);
+            pictureBox3.Image = image;
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, pictureBox3.Width, pictureBox3.Height);
+            pictureBox3.Region = new Region(path);
             ShowDialog();
         }
 
         public void SetBoxes(string[] profile)
         {
             // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = place of birth, 8 = threat level, 9 = Image Location
-
-            Bitmap ResizeImage(Image imageToChange, int width, int height) {
-                var destRect = new Rectangle(0, 0, width, height);
-                var destImage = new Bitmap(width, height);
-
-                destImage.SetResolution(imageToChange.HorizontalResolution, imageToChange.VerticalResolution);
-
-                using (var graphics = Graphics.FromImage(destImage)) {
-                    graphics.CompositingMode = CompositingMode.SourceCopy;
-                    graphics.CompositingQuality = CompositingQuality.HighQuality;
-                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    graphics.SmoothingMode = SmoothingMode.HighQuality;
-                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
-                    using (var wrapMode = new ImageAttributes()) {
-                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                        graphics.DrawImage(imageToChange, destRect, 0, 0, imageToChange.Width, imageToChange.Height, GraphicsUnit.Pixel, wrapMode);
-                    }
-                }
-
-                return destImage;
-            }
-
 
             Text = "Profile of User: " + profile[0];
 
@@ -111,23 +114,11 @@ namespace ctOS_Registration {
                     .Replace(" ", "_");
             }
 
-            bool choosenPicture = false;
-            string pictureLocation = String.Empty;
-            while(!choosenPicture) {
-                MessageBox.Show("Please choose a PNG file for your profile picture.\n(Make sure that the image is square, otherwise stretching will occur)", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                OpenFileDialog fd = new OpenFileDialog();
-                fd.Filter = "PNG Files|*.png";
-                fd.Title = "Please choose a PNG for your profile picture.";
-                if (fd.ShowDialog() == DialogResult.OK) {
-                    pictureLocation = fd.FileName;
-                    choosenPicture = true;
-                }
-            }
-
             string profilesDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Profiles";
             string filename = profilesDir + @"\" + safeFileName(nameBox) + @".json";
             string pictureDir = profilesDir + @"\Pictures";
             string pictureFilename = pictureDir + @"\" + safeFileName(nameBox) + ".png";
+            string pictureFileLocation = @"temp.png";
 
             try {
                 if (!Directory.Exists(profilesDir)) {
@@ -141,6 +132,10 @@ namespace ctOS_Registration {
                 }
                 if (File.Exists(pictureFilename)) {
                     File.Delete(pictureFilename);
+                }
+                if (!File.Exists("temp.png")) {
+                    Bitmap image = Properties.Resources.download;
+                    image.Save("temp.png", ImageFormat.Png);
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -186,7 +181,8 @@ namespace ctOS_Registration {
             try {
                 if(!fileError) {
                     File.WriteAllText(filename, profileString);
-                    File.Copy(pictureLocation, pictureFilename, true);
+                    File.Copy(pictureFileLocation, pictureFilename);
+                    File.Delete(pictureFileLocation);
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -205,11 +201,39 @@ namespace ctOS_Registration {
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }finally {
-                if(!fileError) {
+                try {
+                    if (File.Exists("temp.png")) File.Delete("temp.png");
+                }catch (Exception ex) {
+                    MessageBox.Show("Could not delete temp.png, please delete manually.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                if (!fileError) {
                     MessageBox.Show("Thank you for cooperating, citizen.", "Thank you.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
             }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e) {
+            bool choosenPicture = false;
+            string pictureLocation = String.Empty;
+            MessageBox.Show("Please choose a PNG file for your profile picture.\n(Make sure that the image is square, otherwise stretching will occur)", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.Filter = "PNG Files|*.png";
+            fd.Title = "Please choose a PNG for your profile picture.";
+            if (fd.ShowDialog() == DialogResult.OK) {
+                pictureLocation = fd.FileName;
+                choosenPicture = true;
+            } else {
+                choosenPicture = false;
+            }
+            Bitmap image;
+            if (choosenPicture) {
+                image = new Bitmap(pictureLocation);
+            } else {
+                image = Properties.Resources.download;
+            }
+            image.Save("temp.png", ImageFormat.Png);
+            pictureBox3.Image = ResizeImage(image, 250, 250);
         }
     }
 }
