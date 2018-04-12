@@ -21,7 +21,7 @@ namespace ctOS_Registration {
             Hide();
             Form2 f2 = new Form2();
             f2.ctOS_Registration();
-            Close();
+            Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace ctOS_Registration {
             Hide();
             Form2 f2 = new Form2();
             f2.ctOS_Registration();
-            Close();
+            Show();
         }
 
         private void adminPanelButton_Click(object sender, EventArgs e) {
@@ -41,7 +41,7 @@ namespace ctOS_Registration {
                 adminLoginPanel login = new adminLoginPanel();
                 Hide();
                 login.ShowDialog();
-                Close();
+                Show();
             }else {
                 if (!Directory.Exists(profilesDir)) {
                     try {

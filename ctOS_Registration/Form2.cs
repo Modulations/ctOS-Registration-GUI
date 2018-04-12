@@ -73,6 +73,9 @@ namespace ctOS_Registration {
 
             Bitmap image = new Bitmap(profile[9]);
             pictureBox3.Image = ResizeImage(image, 250, 250);
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, pictureBox3.Width, pictureBox3.Height);
+            pictureBox3.Region = new Region(path);
 
             button1.Enabled = false;
 
