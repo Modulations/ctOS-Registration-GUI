@@ -187,7 +187,7 @@ namespace ctOS_Registration {
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 fileError = true;
-            } finally { }
+            }
 
             try {
                 if (!fileError) {
@@ -216,6 +216,7 @@ namespace ctOS_Registration {
         private void pictureBox3_Click(object sender, EventArgs e) {
             bool choosenPicture = false;
             string pictureLocation = String.Empty;
+
             MessageBox.Show("Please choose a PNG file for your profile picture.\n(Make sure that the image is square, otherwise stretching will occur)", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             OpenFileDialog fd = new OpenFileDialog();
             fd.Filter = "PNG Files|*.png";
@@ -226,12 +227,9 @@ namespace ctOS_Registration {
             } else {
                 choosenPicture = false;
             }
-            Bitmap image;
-            if (choosenPicture) {
-                image = new Bitmap(pictureLocation);
-            } else {
-                image = Properties.Resources.download;
-            }
+
+            Bitmap image = choosenPicture ? new Bitmap(pictureLocation) : Properties.Resources.download;
+            
             image.Save("temp.png", ImageFormat.Png);
             pictureBox3.Image = ResizeImage(image, 250, 250);
         }
