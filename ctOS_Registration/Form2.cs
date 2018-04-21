@@ -65,6 +65,11 @@ namespace ctOS_Registration {
             salBox.AppendText(profile[6]);
             birthBox.AppendText(profile[7]);
             threatBox.Enabled = true;
+            if (profile[8].Contains(".")) {
+                int index = profile[8].IndexOf('.');
+                profile[8] = profile[8].Substring(0, index);
+            }
+            profile[8] += @"%";
             threatBox.AppendText(profile[8]);
 
             nameBox.Enabled = false;
@@ -114,20 +119,16 @@ namespace ctOS_Registration {
                     .Replace("|", "")
                     .Replace(" ", "_");
             }
-
-            string appDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\ctOS_Registration";
-            string profilesDir = appDir + @"\Profiles";
-            string filename = profilesDir + @"\" + safeFileName(nameBox) + @".json";
-            string pictureDir = profilesDir + @"\Pictures";
+            
+            string filepath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Profiles";
+            string filename = filepath + @"\" + safeFileName(nameBox) + @".json";
+            string pictureDir = filepath + @"\Pictures";
             string pictureFilename = pictureDir + @"\" + safeFileName(nameBox) + ".png";
             string pictureFileLocation = @"temp.png";
 
             try {
-                if (!Directory.Exists(appDir)) {
-                    Directory.CreateDirectory(appDir);
-                }
-                if (!Directory.Exists(profilesDir)) {
-                    Directory.CreateDirectory(profilesDir);
+                if (!Directory.Exists(filepath)) {
+                    Directory.CreateDirectory(filepath);
                 }
                 if (!Directory.Exists(pictureDir)) {
                     Directory.CreateDirectory(pictureDir);
@@ -196,12 +197,9 @@ namespace ctOS_Registration {
 
             try {
                 if (!fileError) {
-                    int p = (int) Environment.OSVersion.Platform;
-                    if((p == 4) || (p == 6) || (p == 128)) { // Running on Unix
-                        System.Diagnostics.Process.Start("xdg-open", filename);
-                    } else { // Running on not Unix
-                        System.Diagnostics.Process.Start(@"c:\Windows\notepad.exe", filename);
-                    }
+                    string[] profileArray = ctOSDatabaseAccess.GetCTOSProfile(filename);
+                    Form2 f2 = new Form2();
+                    f2.SetBoxes(profileArray);
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -236,8 +234,10 @@ namespace ctOS_Registration {
             Bitmap image = choosenPicture ? new Bitmap(pictureLocation) : Properties.Resources.download;
             
             image.Save("temp.png", ImageFormat.Png);
+            pictureBox3.Hide();
             pictureBox3.Image = ResizeImage(image, 250, 250);
             CircularizeImage(pictureBox3);
+            pictureBox3.Show();
         }
     }
 }
