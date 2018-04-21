@@ -89,15 +89,16 @@ namespace ctOS_Registration {
                     fileError = true;
                 }
 
+                // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = place of birth, 8 = threat level, 9 = Image Location
                 JObject profileObj = new JObject(
                     new JProperty("Name", profileArray[0]),
                     new JProperty("Gender", profileArray[1]),
-                    new JProperty("Place Of Birth", profileArray[2]),
-                    new JProperty("Age", profileArray[3]),
-                    new JProperty("Occupation", profileArray[4]),
-                    new JProperty("Race", profileArray[5]),
-                    new JProperty("Affiliations", profileArray[6]),
-                    new JProperty("Salary", profileArray[7]),
+                    new JProperty("Place Of Birth", profileArray[7]),
+                    new JProperty("Age", profileArray[2]),
+                    new JProperty("Occupation", profileArray[3]),
+                    new JProperty("Race", profileArray[4]),
+                    new JProperty("Affiliations", profileArray[5]),
+                    new JProperty("Salary", profileArray[6]),
                     new JProperty("Threat Level", profileArray[8]));
                 string profileString = profileObj.ToString();
 
