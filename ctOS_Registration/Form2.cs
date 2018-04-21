@@ -33,6 +33,11 @@ namespace ctOS_Registration {
 
             return destImage;
         }
+        void CircularizeImage(PictureBox picture) {
+            GraphicsPath path = new GraphicsPath();
+            path.AddEllipse(0, 0, picture.Width, picture.Height);
+            picture.Region = new Region(path);
+        }
 
         public void ctOS_RegistrationPage() {
             Text = "ctOS User Registration";
@@ -41,9 +46,7 @@ namespace ctOS_Registration {
             pictureBox2.Hide();
             Bitmap image = ResizeImage(Properties.Resources.download, 250, 250);
             pictureBox3.Image = image;
-            GraphicsPath path = new GraphicsPath();
-            path.AddEllipse(0, 0, pictureBox3.Width, pictureBox3.Height);
-            pictureBox3.Region = new Region(path);
+            CircularizeImage(pictureBox3);
             ShowDialog();
         }
 
@@ -76,9 +79,7 @@ namespace ctOS_Registration {
 
             Bitmap image = new Bitmap(profile[9]);
             pictureBox3.Image = ResizeImage(image, 250, 250);
-            GraphicsPath path = new GraphicsPath();
-            path.AddEllipse(0, 0, pictureBox3.Width, pictureBox3.Height);
-            pictureBox3.Region = new Region(path);
+            CircularizeImage(pictureBox3);
 
             button1.Enabled = false;
 
@@ -236,6 +237,7 @@ namespace ctOS_Registration {
             
             image.Save("temp.png", ImageFormat.Png);
             pictureBox3.Image = ResizeImage(image, 250, 250);
+            CircularizeImage(pictureBox3);
         }
     }
 }
