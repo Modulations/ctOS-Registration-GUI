@@ -114,13 +114,17 @@ namespace ctOS_Registration {
                     .Replace(" ", "_");
             }
 
-            string profilesDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Profiles";
+            string appDir = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\ctOS_Registration";
+            string profilesDir = appDir + @"\Profiles";
             string filename = profilesDir + @"\" + safeFileName(nameBox) + @".json";
             string pictureDir = profilesDir + @"\Pictures";
             string pictureFilename = pictureDir + @"\" + safeFileName(nameBox) + ".png";
             string pictureFileLocation = @"temp.png";
 
             try {
+                if (!Directory.Exists(appDir)) {
+                    Directory.CreateDirectory(appDir);
+                }
                 if (!Directory.Exists(profilesDir)) {
                     Directory.CreateDirectory(profilesDir);
                 }
@@ -133,9 +137,9 @@ namespace ctOS_Registration {
                 if (File.Exists(pictureFilename)) {
                     File.Delete(pictureFilename);
                 }
-                if (!File.Exists("temp.png")) {
+                if (!File.Exists(pictureFileLocation)) {
                     Bitmap image = Properties.Resources.download;
-                    image.Save("temp.png", ImageFormat.Png);
+                    image.Save(pictureFileLocation, ImageFormat.Png);
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -203,7 +207,7 @@ namespace ctOS_Registration {
             }finally {
                 try {
                     if (File.Exists("temp.png")) File.Delete("temp.png");
-                }catch (Exception ex) {
+                }catch {
                     MessageBox.Show("Could not delete temp.png, please delete manually.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 if (!fileError) {

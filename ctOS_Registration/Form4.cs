@@ -9,8 +9,8 @@ namespace ctOS_Registration {
         }
 
         private void SearchButton_Click(object sender, EventArgs e) {
-            string name = textBox1.Text.ToString();
-            string filepath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Profiles";
+            string name = textBox1.Text;
+            string filepath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\ctOS_Registration\Profiles";
 
             string safeFileName(string filename) {
                 return name
@@ -26,12 +26,15 @@ namespace ctOS_Registration {
                     .Replace(" ", "_");
             }
             string fullpath = filepath + @"\" + safeFileName(name) + @".json";
-
             if (File.Exists(fullpath)) {
                 ctOSDatabaseAccess.ctOSDisplay(fullpath);
             }else {
                 MessageBox.Show("Profile was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+
         }
     }
 }
