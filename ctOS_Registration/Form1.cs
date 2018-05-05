@@ -46,7 +46,8 @@ namespace ctOS_Registration {
                 if (!Directory.Exists(profilesDir)) {
                     try {
                         Directory.CreateDirectory(profilesDir);
-                    }catch(Exception ex) {
+                        Directory.CreateDirectory(passDir);
+                    } catch(Exception ex) {
                         MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }

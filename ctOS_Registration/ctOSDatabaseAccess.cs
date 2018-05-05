@@ -56,8 +56,8 @@ namespace ctOS_Registration {
                 string pob = GetJObjectValue(profile, "Place Of Birth");
                 string threatLevel = GetJObjectValue(profile, "Threat Level");
                 
-                int index = filepath.LastIndexOf(@"\");
-                string imageLoc = filepath.Substring(0, index + 1) + @"Pictures\" + safeFileName(name) + ".png";
+                int index = filepath.LastIndexOf(@"\") + 1;
+                string imageLoc = filepath.Substring(0, index) + @"Pictures\" + safeFileName(name) + ".png";
 
                 string[] info = { name, gender, age, occupation, race, affiliations, salary, pob, threatLevel, imageLoc }; // 0 = name, 1 = gender, 2 = age, 3 = occupation, 4 = race, 5 = affiliations, 6 = salary, 7 = place of birth, 8 = threat level, 9 = Image Location
 
