@@ -1,6 +1,6 @@
 ﻿namespace ctOS_Registration
 {
-    partial class ctOS_Welcome
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctOS_Welcome));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.adminPanelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,28 +101,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(362, 204);
+            this.label4.Location = new System.Drawing.Point(360, 259);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Continue?";
             // 
-            // adminPanelButton
-            // 
-            this.adminPanelButton.Location = new System.Drawing.Point(339, 243);
-            this.adminPanelButton.Name = "adminPanelButton";
-            this.adminPanelButton.Size = new System.Drawing.Size(102, 66);
-            this.adminPanelButton.TabIndex = 8;
-            this.adminPanelButton.Text = "Admin";
-            this.adminPanelButton.UseVisualStyleBackColor = true;
-            this.adminPanelButton.Click += new System.EventHandler(this.adminPanelButton_Click);
-            // 
-            // ctOS_Welcome
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 321);
-            this.Controls.Add(this.adminPanelButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -133,7 +121,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ctOS_Welcome";
+            this.Name = "Form1";
             this.Text = "ctOS User Registration Panel";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -150,7 +138,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button adminPanelButton;
     }
 }
 

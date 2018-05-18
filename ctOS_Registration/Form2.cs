@@ -1,10 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using System.IO;
-using System.Drawing;
-using System.Drawing.Imaging;
-using System.Drawing.Drawing2D;
 
 namespace ctOS_Registration {
     public partial class Form2 : Form {
@@ -93,11 +92,7 @@ namespace ctOS_Registration {
 
         private void button1_Click(object sender, EventArgs e) {
             bool fileError = false;
-            double GetRandomNumber(double minimum, double maximum)
-            {
-                Random random = new Random();
-                return random.NextDouble() * (maximum - minimum) + minimum;
-            }
+
             string sterilizeTextBoxText(TextBox boxText)
             {
                 string text = boxText.ToString();
@@ -130,9 +125,6 @@ namespace ctOS_Registration {
                 if (!Directory.Exists(filepath)) {
                     Directory.CreateDirectory(filepath);
                 }
-                if (!Directory.Exists(pictureDir)) {
-                    Directory.CreateDirectory(pictureDir);
-                }
                 if (File.Exists(filename)) {
                     File.Delete(filename);
                 }
@@ -146,26 +138,23 @@ namespace ctOS_Registration {
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 fileError = true;
-            }
+            } finally { }
 
             string name = sterilizeTextBoxText(nameBox);
             string placeOfBirth = sterilizeTextBoxText(birthBox);
             string age = sterilizeTextBoxText(ageBox);
+            string dateOfBirth = sterilizeTextBoxText(dobBox);
             string occupation = sterilizeTextBoxText(occBox);
             string race = sterilizeTextBoxText(raceBox);
             string affiliations = sterilizeTextBoxText(affBox);
             string salary = sterilizeTextBoxText(salBox);
-            double threatLevel = GetRandomNumber(0.00, 100.00);
+            string aliases = sterilizeTextBoxText(aliBox);
+            string specs = sterilizeTextBoxText(specBox);
             string gender;
             try {
-                if (genderBox.SelectedItem.ToString() == String.Empty) {
-                    MessageBox.Show("Please Select a Valid Option.", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    gender = "Error";
-                    fileError = true;
-                }else {
-                    gender = genderBox.SelectedItem.ToString();
-                }
-            } catch {
+                gender = genderBox.SelectedItem.ToString();
+            } catch (Exception ex) {
+                string exc = ex.ToString();
                 MessageBox.Show("Please Select a Valid Option.", "Gender", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 gender = "Error";
                 fileError = true;
@@ -175,15 +164,33 @@ namespace ctOS_Registration {
                 new JProperty("Name", name),
                 new JProperty("Gender", gender),
                 new JProperty("Place Of Birth", placeOfBirth),
+                new JProperty("Date Of Birth", dateOfBirth),
                 new JProperty("Age", age),
                 new JProperty("Occupation", occupation),
                 new JProperty("Race", race),
                 new JProperty("Affiliations", affiliations),
                 new JProperty("Salary", salary),
-                new JProperty("Threat Level", threatLevel.ToString()));
+                new JProperty("Aliases", aliases),
+                new JProperty("Specializations", specs));
 
             string profileString = profile.ToString();
             
+            /*string HashedSHA256(string text) {
+                try {
+                    byte[] bytes = Encoding.UTF8.GetBytes(text);
+                    SHA256Managed hashstring = new SHA256Managed();
+                    byte[] hash = hashstring.ComputeHash(bytes);
+                    string hashString = string.Empty;
+                    foreach (byte x in hash) {
+                        hashString += String.Format("{0:x2}", x);
+                    }
+                    return hashString;
+                }catch (Exception ex) {
+                    MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return "";
+                }finally {}
+            }*/
+
             try {
                 if(!fileError) {
                     File.WriteAllText(filename, profileString);
@@ -200,6 +207,12 @@ namespace ctOS_Registration {
                     string[] profileArray = ctOSDatabaseAccess.GetCTOSProfile(filename);
                     Form2 f2 = new Form2();
                     f2.SetBoxes(profileArray);
+                    int p = (int) Environment.OSVersion.Platform;
+                    if((p == 4) || (p == 6) || (p == 128)) { // Running on Unix
+                        System.Diagnostics.Process.Start("xdg-open", filename);
+                    } else { // Running on not Unix
+                        System.Diagnostics.Process.Start(@"c:\Windows\notepad.exe", filename);
+                    }
                 }
             } catch (Exception ex) {
                 MessageBox.Show(ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
