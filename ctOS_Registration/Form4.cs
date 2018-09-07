@@ -42,7 +42,7 @@ namespace ctOS_Registration {
 
 
             OpenFileDialog fd = new OpenFileDialog();
-            fd.Filter = "JSOn Files|*.json";
+            fd.Filter = "JSON Files|*.json";
             fd.Title = "Please choose a .JSON profile to import.";
             bool fileChoosen = false;
             if (fd.ShowDialog() == DialogResult.OK) {
